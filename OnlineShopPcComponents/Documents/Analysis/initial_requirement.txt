@@ -1,0 +1,16 @@
+Online Shop Pc Components -
+
+       Java Web Application used to sell pc components .
+
+    ● One window for CRUD operations on Products ( product id , specification , price , manufacturer):  allows the viewing of all the products , adding a new product , deleting an existing product and updating an existing product .
+
+    ● One window for CRUD operations on Orders(order id , order date , price of order , status of order) allow of the viewing of all the orders , adding a new order , deleting an existing order and updating an existing order)
+
+    ● One window for CRUD operations on Basket (products ,  quantity , total price ) allows the viewing of all the products in the basket , updating  quantity of a product , viewing the total price cost for the products)
+
+    ● One window for CRUD operations on Profile ( name , lastname , email , address ) allows the viewing of all the profiles , adding a new profile , deleting an existing profile , updating an existing profile .
+
+    ● One window for client:
+      -view all products, filter products, add products to cart -make orders,-make CRUD operations on basket and profile.
+
+    ● One window for register , login and forgot password .
