@@ -23,6 +23,7 @@ public class User {
     private String password;
     @NotNull(message = "PhoneNumber must be not null")
     @NotEmpty(message = "PhoneNumber must be not empty")
+    @Column(name = "phone_number")
     private String phoneNumber;
     @NotNull
     @Column(name = "role")
