@@ -2,7 +2,7 @@ Online Shop Pc Components -
 
        Java Web Application used to sell pc components .
 
-    ● One window for CRUD operations on Products ( product id , specification , price , manufacturer):  allows the viewing of all the products , adding a new product , deleting an existing product and updating an existing product .
+    ● One window for CRUD operations on Products ( product id , specification , price ,model, manufacturer):  allows the viewing of all the products , adding a new product , deleting an existing product and updating an existing product .
 
     ● One window for CRUD operations on Orders(order id , order date , price of order , status of order) allow of the viewing of all the orders , adding a new order , deleting an existing order and updating an existing order)
 

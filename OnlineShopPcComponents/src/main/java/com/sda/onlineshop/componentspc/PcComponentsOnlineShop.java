@@ -1,6 +1,6 @@
-package org.example;
+package com.sda.onlineshop.componentspc;
 
-public class Main {
+public class PcComponentsOnlineShop {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
