@@ -18,7 +18,6 @@ public class User {
     private String email;
     @NotNull(message = "password must be not null")
     @NotBlank(message = "password must be not blank")
-    @Size(min = 6)
     @Column(name ="password")
     private String password;
     @NotNull(message = "PhoneNumber must be not null")
@@ -28,7 +27,7 @@ public class User {
     @NotNull
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private UserRole userRole;
     @OneToOne
     @JoinColumn(name = "client_profile_id")
     private ClientProfile clientProfile;
@@ -36,13 +35,16 @@ public class User {
     public User() {
     }
 
-    public User(String email, String password, String phoneNumber, UserRole role, ClientProfile clientProfile) {
+    public User(String email, String password, String phoneNumber, UserRole userRole) {
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.role = role;
-        this.clientProfile = clientProfile;
+        this.userRole = userRole;
+
     }
+
+
+
 
     public Integer getId() {
         return id;
@@ -76,12 +78,12 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public UserRole getRole() {
-        return role;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     public ClientProfile getClientProfile() {
@@ -99,7 +101,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", role=" + role +
+                ", role=" + userRole +
                 ", clientProfile=" + clientProfile +
                 '}';
     }

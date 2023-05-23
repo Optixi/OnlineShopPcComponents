@@ -1,4 +1,4 @@
-package com.sda.onlineshop.componentspc.controller;
+package com.sda.onlineshop.componentspc.controller.dto;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
