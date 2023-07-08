@@ -3,25 +3,25 @@ package com.sda.onlineshop.componentspc.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "client_profile")
-public class ClientProfile {
+@Table(name = "user_profile")
+public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
     private Integer id;
     @Column(name = "first_name")
-    private String firstname;
+    private String firstName;
     @Column(name = "last_name")
-    private String lastname;
+    private String lastName;
     @Column(name ="address")
     private String address;
 
-    public ClientProfile() {
+    public UserProfile() {
     }
 
-    public ClientProfile(String firstname, String lastname, String address) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public UserProfile(String firstName, String lastName, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
     }
 
@@ -33,20 +33,20 @@ public class ClientProfile {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddress() {
@@ -61,8 +61,8 @@ public class ClientProfile {
     public String toString() {
         return "ClientProfile{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", firstname='" + firstName + '\'' +
+                ", lastname='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }

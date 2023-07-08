@@ -29,8 +29,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
     @OneToOne
-    @JoinColumn(name = "client_profile_id")
-    private ClientProfile clientProfile;
+    @JoinColumn(name = "user_profile_id")
+    private UserProfile userProfile;
 
     public User() {
     }
@@ -86,12 +86,12 @@ public class User {
         this.userRole = userRole;
     }
 
-    public ClientProfile getClientProfile() {
-        return clientProfile;
+    public UserProfile getUserProfile() {
+        return userProfile;
     }
 
-    public void setClientProfile(ClientProfile clientProfile) {
-        this.clientProfile = clientProfile;
+    public void setClientProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", role=" + userRole +
-                ", clientProfile=" + clientProfile +
+                ", clientProfile=" + userProfile +
                 '}';
     }
 }

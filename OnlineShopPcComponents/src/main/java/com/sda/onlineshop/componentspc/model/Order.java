@@ -21,23 +21,23 @@ public class Order {
     @Column(name = "status")
     private OrderStatus status;
     @Column(name = "total_price")
-    private Integer totalPrice;
+    private Double totalPrice;
     @ManyToOne
-    @JoinColumn(name = "client_profile_id")
-    private ClientProfile clientProfile;
+    @JoinColumn(name = "user_profile_id")
+    private UserProfile userProfile;
 
     @OneToMany(mappedBy = "order")
-    private List<ProductOrder> productOrder;
+    private List<ProductOrder> productOrders;
 
     public Order() {
     }
 
-    public Order(String orderNumber, Date dateOfOrder, OrderStatus status, Integer totalPrice, ClientProfile clientProfile) {
+    public Order(String orderNumber, Date dateOfOrder, OrderStatus status, Double totalPrice, UserProfile userProfile) {
         this.orderNumber = orderNumber;
         this.dateOfOrder = dateOfOrder;
         this.status = status;
         this.totalPrice = totalPrice;
-        this.clientProfile = clientProfile;
+        this.userProfile = userProfile;
     }
 
     public Integer getId() {
@@ -72,26 +72,26 @@ public class Order {
         this.status = status;
     }
 
-    public Integer getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Integer totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public ClientProfile getClientProfile() {
-        return clientProfile;
+    public UserProfile getUserProfile() {
+        return userProfile;
     }
 
-    public void setClientProfile(ClientProfile clientProfile) {
-        this.clientProfile = clientProfile;
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
-    public List<ProductOrder> getProductOrder(){
-        return productOrder;
+    public List<ProductOrder> getProductOrders(){
+        return productOrders;
     }
-    public void setProductOrder(List<ProductOrder> productOrder) {
-        this.productOrder = productOrder;
+    public void setProductOrders(List<ProductOrder> productOrder) {
+        this.productOrders = productOrder;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class Order {
                 ", dateOfOrder=" + dateOfOrder +
                 ", status=" + status +
                 ", totalPrice=" + totalPrice +
-                ", clientProfile=" + clientProfile +
+                ", clientProfile=" + userProfile +
                 '}';
     }
 }

@@ -3,6 +3,8 @@ package com.sda.onlineshop.componentspc.model;
 import com.sda.onlineshop.componentspc.model.constant.ProductCategory;
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "product")
 public class Product {
@@ -23,17 +25,23 @@ public class Product {
     private String manufacturer;
     @Column(name = "price")
     private Double price;
+    @Column(name ="promo_price")
+    private Double promoPrice;
+    @Column(name = "main_image_url")
+    private String mainImageUrl;
 
     public Product() {
     }
 
-    public Product(String name, String model, String specification, ProductCategory category, String manufracturer, double price) {
+    public Product(String name, String model, String specification, ProductCategory category, String manufacturer, Double price, Double promoPrice, String mainImageUrl) {
         this.name = name;
         this.model = model;
         this.specification = specification;
         this.category = category;
-        this.manufacturer = manufracturer;
+        this.manufacturer = manufacturer;
         this.price = price;
+        this.promoPrice = promoPrice;
+        this.mainImageUrl = mainImageUrl;
     }
 
     public Integer getId() {
@@ -84,24 +92,40 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
+    public Double getPromoPrice() {
+        return promoPrice;
+    }
+
+    public void setPromoPrice(Double promoPrice) {
+        this.promoPrice = promoPrice;
+    }
+
+    public String getMainImageUrl() {
+        return mainImageUrl;
+    }
+
+    public void setMainImageUrl(String mainImageUrl) {
+        this.mainImageUrl = mainImageUrl;
+    }
+
     @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", model='" + model + '\'' +
-                ", specification='" + specification + '\'' +
-                ", category=" + category +
-                ", manufracturer='" + manufacturer + '\'' +
-                ", price=" + price +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

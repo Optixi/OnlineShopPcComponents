@@ -8,6 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -23,15 +24,19 @@ public class SecurityConfiguration {
                         "/css/**",
                         "/img/**",
                         "/js/**",
+                        "/images/**",
                         "/vendor/**",
                         "/webjars/**",
                         "/*/webjars/**",
                         "/client-register/**",
                         "/",
                         "/index",
-                        "/home"
+                        "/home",
+                        "/shopping-cart-add/**",
+                        "/shopping-cart-remove/**",
+                        "/shopping-cart/**"
                 ).permitAll()
-                .requestMatchers("/admin-register")
+                .requestMatchers("/admin-register","/add-product","/update-product","/all-orders","/delete-product")
                 .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
@@ -52,4 +57,3 @@ public class SecurityConfiguration {
     }
 
 }
-
